@@ -12,8 +12,11 @@ function App() {
   const deleteBlog = (e) => {
     const id = e.target.getAttribute("name")
     const i = e.target.getAttribute("index")
+    console.log(i);
     fetch('https://jsonplaceholder.typicode.com/posts/'+id, { method: 'DELETE' });
-    data.current = data.current.splice(0,i)
+    console.log(data.current);
+    data.current = data.current.splice(0,1)
+    console.log(data.current);
     alert("Blog Deleted")
   }
   useEffect(() => {
